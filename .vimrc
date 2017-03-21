@@ -1,28 +1,3 @@
-set cin
-set cursorline
-set hlsearch
-set enc=utf8
-set ruler
-set backspace=2
-
-set hls
-" Press Space to turn off highlighting and clear any message already displayed.
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-set ic
-
-set expandtab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-retab
-
-set scrolloff=5
-set cursorcolumn
-
-set autoindent
-set smartindent
-set backupcopy=yes
-
 "----------VUNDLE----------"
 
 set nocompatible              " be iMproved, required
@@ -54,11 +29,12 @@ Plugin 'jwalton512/vim-blade' " laravel blade
 Plugin 'hail2u/vim-css3-syntax'
 
 " js
-Plugin 'mxw/vim-jsx' " jsx highlight
-Plugin 'othree/yajs.vim' " es6 highlight
 Plugin 'othree/es.next.syntax.vim'
 Plugin 'elzr/vim-json'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx' " jsx highlight
+let g:jsx_ext_required = 0
+Plugin 'othree/yajs.vim' " es6 highlight
 Plugin 'othree/javascript-libraries-syntax.vim'
 
 " All of your Plugins must be added before the following line
@@ -72,6 +48,42 @@ filetype plugin indent on    " required
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+
+colorscheme default
+
+" General
+syntax on
+set cursorline
+set enc=utf8
+set ruler
+set backspace=2
+set ic
+
+" Restore cursor
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+" hl
+set hlsearch
+" Press Space to turn off highlighting and clear any message already displayed.
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+" Must add after color scheme
+highlight Comment cterm=italic
+
+" C
+set cin
+
+" Tab
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+retab
+
+set scrolloff=5
+set cursorcolumn
+
+set autoindent
+set smartindent
+set backupcopy=yes
+
