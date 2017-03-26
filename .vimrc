@@ -29,13 +29,10 @@ Plugin 'jwalton512/vim-blade' " laravel blade
 Plugin 'hail2u/vim-css3-syntax'
 
 " js
-Plugin 'othree/es.next.syntax.vim'
 Plugin 'elzr/vim-json'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx' " jsx highlight
 let g:jsx_ext_required = 0
-Plugin 'othree/yajs.vim' " es6 highlight
-Plugin 'othree/javascript-libraries-syntax.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
