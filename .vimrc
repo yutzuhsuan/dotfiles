@@ -84,3 +84,4 @@ set autoindent
 set smartindent
 set backupcopy=yes
 
+autocmd FileType javascript set formatprg=prettier\ --stdin
