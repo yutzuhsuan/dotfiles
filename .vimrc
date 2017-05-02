@@ -34,6 +34,9 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx' " jsx highlight
 let g:jsx_ext_required = 0
 
+" Oceanic next
+Plugin 'mhartington/oceanic-next'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -83,5 +86,13 @@ set cursorcolumn
 set autoindent
 set smartindent
 set backupcopy=yes
+
+" for vim 8
+if (has("termguicolors"))
+set termguicolors
+endif
+
+colorscheme OceanicNext
+
 
 autocmd FileType javascript set formatprg=prettier\ --stdin
